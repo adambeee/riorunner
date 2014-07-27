@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4211161546">
+    <data-source source="LOCAL" name="Rails riorunner: development" uuid="f6f1a8a9-1206-4295-bb00-f4f386d760f3">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:riorunner_development</jdbc-url>
+      <user-name>bacaadam</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails riorunner: test" uuid="5fb60e1d-a865-426d-8970-b9becedd165e">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:riorunner_test</jdbc-url>
+      <user-name>bacaadam</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails riorunner: production" uuid="09b9346e-c1c3-494f-8026-9be7010cd142">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:riorunner_production</jdbc-url>
+      <user-name>riorunner</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddff8dfe3dfe5dff8dfffdfe4dfe4dfefdff8dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
