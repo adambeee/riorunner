@@ -1,25 +1,20 @@
-<h1>Listing tasks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.user %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class = "row">
+  <div class = "tag_cloud col-sm-12">
+    <h2>This is going to be a search</h2>
+    <%= link_to "all jobs", tasks_path(@task), class: "tag" %>
+    <% tag_cloud Task.tag_counts.sort_by(&:count).reverse, %w[s m l] do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), class: "tag"  %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
+<%= render 'tasksgrid' %>
+<div class = "col-md-12">
+  <br/>
+  <br/>
+</div>
 
-<br>
 
-<%= link_to 'New Task', new_task_path %>
+
+
+
+

@@ -79,4 +79,13 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.log_formatter = ::Logger::Formatter.new
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => ENV['riorunner'],
+          :access_key_id => ENV['AKIAIYFSMIESFE7CQUYA'],
+          :secret_access_key => ENV['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']
+      }
+  }
 end

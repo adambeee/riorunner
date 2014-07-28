@@ -1,4 +1,8 @@
 Rails.application.configure do
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -14,13 +18,12 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
-  # Raise an error on page load if there are pending migrations.
+  # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
@@ -28,11 +31,12 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Adds additional error checking when serving assets at runtime.
-  # Checks for improperly declared sprockets dependencies.
-  # Raises helpful error messages.
-  config.assets.raise_runtime_errors = true
-
-  # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => ENV['riorunner'],
+          :access_key_id => ENV['AKIAIYFSMIESFE7CQUYA'],
+          :secret_access_key => ENV['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']
+      }
+  }
 end

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :authentications
   end
+  resources :users
+  resources :tasks
   resources :authentications
   resources :messages
   resources :reviews

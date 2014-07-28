@@ -1,0 +1,170 @@
+img {
+  @extend .img-responsive;
+  margin: 0 auto;
+}
+// override for the 'Home' navigation link
+.navbar-brand {
+  font-size: inherit;
+}
+
+// THESE ARE EXAMPLES YOU CAN MODIFY
+// create your own classes
+// to make views framework-neutral
+.column {
+  @extend .col-md-6;
+  @extend .text-center;
+}
+.form {
+  @extend .col-md-6;
+}
+.form-centered {
+  @extend .col-md-6;
+  @extend .text-center;
+}
+.submit {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+}
+// apply styles to HTML elements
+// to make views framework-neutral
+
+main {
+  position: absolute;
+  @extend .container;
+  color: #fff;
+  width:100%;
+  //  background-color: rgba(0,0,0,.4);
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+}
+section {
+  @extend .row;
+  margin-top: 20px;
+}
+.header{
+  top:0;
+}
+body {
+  color: #fff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight:200;
+
+}
+html body {
+  /*background: url('bg.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+  //background-color: #414042;
+}
+
+tr.row_hover {
+  cursor: pointer;
+  /* whatever other hover styles you want */
+}
+.badge {
+  background-color: red;
+}
+
+// Starting Styling of Tokenfields
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th
+{
+  background-color: rgba(0,0,0,.3);
+}
+
+.nav > li > a:hover, .nav > li > a:focus
+{
+  text-decoration: none;
+  background-color: rgba(0,0,0,.3);
+}
+
+.nav > li
+{
+  color: #fff;
+}
+
+.form-control {
+  background-color: rgba(255,255,255,.65);
+  font-weight:300;
+  color: black;
+}
+
+.panel-body{
+  font-color:#414042;
+}
+.panel{
+  color:black;
+}
+#sidebar{
+  position: fixed !important;
+  z-index: -1;
+  top: 20px;
+}
+.modal-body{
+  color: #414042;
+}
+
+li.inactive a{
+  color: #414042;
+}
+
+.alert-success{
+  background-color: rgba(170,205,92,.4);
+  border-color: rgba(255,255,255,.3);
+  color: #fff;
+}
+.alert-danger{
+  background-color: rgba(238,69,69,.4);
+  border-color: rgba(255,255,255,.3);
+  color: #fff;
+}
+.alert-info{
+  background-color: rgba(218,237,246,.4);
+  border-color: rgba(255,255,255,.3);
+  color: #fff;
+}
+.tokenfield .token {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  display: inline-block;
+  border: 1px solid #0063dc;
+  background-color: #fff;
+  white-space: nowrap;
+  margin: -1px 5px 5px 0;
+  height: 22px;
+  vertical-align: top;
+  cursor: default;
+  white-space: nowrap;
+  color: #2372F7;
+}
+.tokenfield .token:hover {
+  border-color: #0063dc;
+}
+.tokenfield .token.active {
+  border-color: #0063dc;
+  border-color: #0063dc;
+}
+
+.tag {
+
+  border-style: solid;
+  border-color: #2372F7;
+  border-width: 1px;
+  color: #2372F7;
+  text-decoration: none;
+  line-height: 2.5em;
+  white-space: nowrap;
+}.token:visited{
+   color: #2372F7;
+ }.token:hover{
+    background-color: #2372F7;
+    color: #fff;
+    text-decoration: none;
+  }
