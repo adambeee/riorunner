@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :authentications
+
+  resources :notes
+
+  resources :messages
+
+  resources :reviews
+
+  resources :tasks
+
   devise_for :users
   resources :users
 
