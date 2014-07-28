@@ -14,7 +14,9 @@
  *= require font-awesome
  *= require bootstrap-tokenfield
  *= require bootstrap
- *= require_tree .
+ *= require overrides
+ *= require tasks
+
  */
 @import "bootstrap-sprockets";
 
