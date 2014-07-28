@@ -15,5 +15,8 @@ class PagesController < ApplicationController
   def help
     @title = "Help"
   end
+  def fontawesomeoptions
+    @title = "fontawesomeoptions"
+  end
 
 end

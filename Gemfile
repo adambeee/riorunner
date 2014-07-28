@@ -53,6 +53,7 @@ gem 'acts-as-taggable-on'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'simple_form'
+gem 'font-awesome-rails'
 
 group :development, :test do
 # Use mysql as the database for Active Record

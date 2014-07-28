@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get '/contact', :to => 'pages#contact'
+  get '/fontawesome', :to => 'pages#fontawesomeoptions'
   get '/about', :to => 'pages#about'
   get '/help', :to => 'pages#help'
   get '/signup', :to => 'users#new'

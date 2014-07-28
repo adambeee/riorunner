@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @message.sender_id %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @message.recipient_id %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @message.subject %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @message.body %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @message.task_id %>
+</p>
+
+<p>
+  <strong>Proposed price:</strong>
+  <%= @message.proposed_price %>
+</p>
+
+<p>
+  <strong>Wallet price:</strong>
+  <%= @message.wallet_price %>
+</p>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>
