@@ -39,7 +39,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails' #It is also recommended to use Autoprefixer with Bootstrap to add browser vendor prefixes automatically.
 gem 'devise'
-gem 'protected_attributes'
 #gem 'bootstrap_tokenfield_rails'
 #gem 'haml'
 gem 'omniauth'
