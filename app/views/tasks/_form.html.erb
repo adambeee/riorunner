@@ -1,31 +1,79 @@
-<%= form_for(@task) do |f| %>
-  <% if @task.errors.any? %>
+
+
+<% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
       <ul>
-      <% @task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @task.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-    <%= f.label :zipcode %>
-    <%= f.text_field :zipcode %>
-    <%= f.label :subject %>
-    <%= f.text_field :subject %>
-    <%= f.label :description %>
-    <%= f.text_field :description, class: "tokenize", placeholder: "Tags" %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+<%= form_for @task do |f| %>
+    <div class="row">
+      <div class = "col-xs-6">
+        <%= f.label :subject, class: "control-label" %>
+        <%= f.text_field :subject, :placeholder =>"Subject", :autofocus => true, class: "form-control pull-left"%>
+      </div>
 
+      <div class = "col-xs-6">
+        <%= f.label :description, class: "control-label" %>
+        <%= f.text_field :description, :placeholder =>"Description", class: "form-control pull-right"%>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-sm-3">
+        <%= f.label :zipcode, class: "control-label" %>
+        <%= f.text_field :zipcode, class: "form-control pull-left",:placeholder =>"Zipcode"%>
+      </div>
+      <div class = "col-sm-6">
+        <%= f.label :deliverables, class: "control-label" %>
+        <%= f.text_field :deliverables, class: "form-control pull-right", :placeholder =>"Deliverables"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-xs-6 pull-left">
+        <%= f.label :tags, class: "tokenize control-label", placeholder: "Tags" %>
+        <%= f.text_field :tag_list, :placeholder =>"Tags", class: "form-control pull-left tokenize", :id => "task_tags", "data-pre" => @task.tags.map(&:attributes).to_json%>
+      </div>
+      <div class = "col-xs-6 pull-right">
+        <%= f.label :task_category, class: "control-label" %>
+        <%= f.select :task_category, ["housecleaning", "dog walking", "outdoors", "yardwork", "handyman", "technology", "tutoring", "cooking", "building", "miscellaneous"], :placeholder =>"Category", class: "form-lg"%>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-xs-12">
+        <hr />
+        <p>Leave below blank if you want task to go into bid format</p>
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-xs-6">
+        <%= f.label :rating_required, class: "control-label" %>
+        <%= f.text_field :rating_required, :placeholder => "Required Runner Rating", class: "form-control pull-left"%>
+      </div>
+
+      <div class = "col-xs-6">
+        <%= f.label "Number of Total Ratings", class: "control-label" %>
+        <%= f.text_field :no_ratings_required, :placeholder => "Required Runner Rating", class: "form-control pull-right"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-xs-6 col-xs-offset-3">
+        <%= f.label :price, class: "control-label" %>
+        <%= f.text_field :price, :placeholder => "Price I'm willing to pay", class: "form-control pull-left"%>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-sm-6 col-sm-offset-6">
+        <br/>
+        <%= f.submit "Submit", class: "btn btn-primary pull-right" %>
+      </div>
+    </div>
+<% end %>
 <script>
     $('input.tokenize').tokenfield();
 </script>
