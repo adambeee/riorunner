@@ -14,8 +14,18 @@
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %>
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "tokenize", placeholder: "Tags" %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+    $('input.tokenize').tokenfield();
+</script>

@@ -54,6 +54,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'simple_form'
 gem 'font-awesome-rails'
+gem 'bootstrap_tokenfield_rails'
 
 group :development, :test do
 # Use mysql as the database for Active Record
