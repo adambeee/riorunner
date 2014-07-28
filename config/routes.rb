@@ -1,16 +1,43 @@
 Rails.application.routes.draw do
+
+  devise_for :users, :controllers => {:registrations => 'registrations'}
+  resources :users do
+    resources :authentications
+  end
   resources :authentications
-
-  resources :notes
-
   resources :messages
-
   resources :reviews
+  resources :tasks do
+    resources :notes
+  end
 
-  resources :tasks
-
-  devise_for :users
-  resources :users
+  root 'pages#home'
+  get '/contact', :to => 'pages#contact'
+  get '/about', :to => 'pages#about'
+  get '/help', :to => 'pages#help'
+  get '/signup', :to => 'users#new'
+  get 'riorunner', :to => 'pages#riorunner'
+  get '/users/sign_up', :to => 'devise/registrations#new'
+  get '/posttask', :to => 'pages#posttask'
+  get '/myriorunner/:id', :to => 'users#my_rio_runner', as: 'myriorunner'
+  get '/mymessages/:id', :to => 'messages#my_messages', as: 'mymessages'
+  get '/messages/inbox/:id', :to => 'messages#rr_inbox', as: 'inbox'
+  get '/messages/sent/:id', :to => 'messages#rr_sent', as: 'sent'
+  get '/messages/deleted/:id', :to => 'messages#rr_deleted', as: 'deleted'
+  get '/mytasks/:id', :to => 'tasks#my_tasks', as: 'mytasks'
+  match 'tagged', to: 'tasks#tagged', :as => 'tagged', via: 'get'
+  get 'tags/:tag', to: 'tasks#index', as: :tag
+  get "tasks/tags" => "tasks#tags", :as => :tags
+  get '/update_task_with_runner/:id', :to => 'tasks#update_task_with_runner', as: 'update_task_with_runner'
+  get '/update_autotask_with_runner/:id', :to => 'tasks#update_autotask_with_runner', as: 'update_autotask_with_runner'
+  get '/taskconfirmation/:id', :to => 'messages#taskconfirmation', as: 'taskconfirmation'
+  match 'auth/:provider/callback', to: 'authentications#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+  get '/markasdeleted/:id', :to => 'messages#markasdeleted', as: 'markasdeleted'
+  get '/users/edit/:id', :to => 'users#edit', as: 'useredit'
+  get '/addpaymentinformationtotask/:id', :to => 'users#add_payment_info', as: 'addpaymentinfo'
+  get '/taskcompletion/:id', :to => 'tasks#task_completion', as: 'taskcompletion'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
