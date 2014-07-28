@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -39,6 +39,21 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails' #It is also recommended to use Autoprefixer with Bootstrap to add browser vendor prefixes automatically.
 gem 'devise'
+gem 'protected_attributes'
+#gem 'bootstrap_tokenfield_rails'
+#gem 'haml'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
+gem 'will_paginate', '~> 3.0' ## Gemfile for Rails 3, Rails 4, Sinatra, and Merb
+#gem 'sunspot_rails'
+#gem 'font-awesome-rails'
+#gem 'jquery-turbolinks'
+gem 'acts-as-taggable-on'
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'simple_form'
 
 group :development, :test do
 # Use mysql as the database for Active Record
