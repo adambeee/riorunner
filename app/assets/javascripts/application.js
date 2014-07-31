@@ -10,8 +10,18 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require turbolinks_transitions
 //= require bootstrap-tokenfield
+//= require app
+//= require jquery.pjax
+//= require jquery.maskedinput
+//= require parsley.min
+//= require jquery.icheck
+//= require select2
+//= require underscore-min
+//= require settings

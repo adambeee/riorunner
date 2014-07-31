@@ -16,6 +16,8 @@
  *= require bootstrap
  *= require overrides
  *= require tasks
+ *= require lightblue
+ *= require nv.d3
 
  */
 @import "bootstrap-sprockets";

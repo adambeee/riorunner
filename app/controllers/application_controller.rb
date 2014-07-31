@@ -31,3 +31,4 @@ class ApplicationController < ActionController::Base
     session[:previous_url] = request.fullpath unless request.fullpath =~ /\/users/
   end
 end
+
