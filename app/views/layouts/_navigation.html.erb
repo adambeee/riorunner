@@ -1,4 +1,50 @@
-  <div class="navbar">
+<!--<div class = "logo">
+  &lt;!&ndash;logo start&ndash;&gt;
+  <% if user_signed_in? %>
+      <%= link_to myriorunner_path(current_user.id), class: "brand" do %>
+          <%= image_tag("rr_logo.png") %>
+      <% end %>
+  <% else %>
+      <%= link_to root_url, class: "brand" do %>
+          <%= image_tag("rr_logo.png") %>
+      <% end %>
+  <% end %>
+</div>-->
+<ul id="gn-menu" class="gn-menu-main">
+  <li class="gn-trigger">
+    <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+    <nav class="gn-menu-wrapper">
+      <div class="gn-scroller">
+        <ul class="gn-menu">
+          <% if user_signed_in? %>
+             <li><%= link_to "Post Job", new_task_path, class: "gn-icon fa fa-pencil" %></li>
+             <li><%= link_to "My Rio Runner", myriorunner_path(current_user.id), class: "gn-icon fa fa-home" %></li>
+              <ul class="gn-submenu">
+                <li><%= link_to "Account Settings", edit_user_registration_path, class: "gn-icon fa fa-cogs" %></li>
+                <li><%= link_to "My Profile", user_path(current_user.id), class: "gn-icon fa fa-user" %></li>
+                <li><%= link_to "My Jobs", mytasks_path(current_user.id), class: "gn-icon fa fa-th-list" %></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete, class: "gn-icon fa fa-sign-out" %></li>
+
+              </ul>
+          <li><%= link_to "My Messages", inbox_path(current_user.id), class: "gn-icon fa fa-envelope" %></li>
+          <ul class="gn-submenu">
+            <li><%= link_to "Inbox", inbox_path(current_user.id), class: "gn-icon fa fa-inbox" %></li>
+            <li><%= link_to "Sent", sent_path(current_user.id), class: "gn-icon fa fa-paper-plane" %></li>
+            <li><%= link_to "Deleted", deleted_path(current_user.id), class: "gn-icon fa fa-trash-o" %></li>
+          </ul>
+
+
+          <% end %>
+          <li><%= link_to "All Jobs",tasks_path, class: "gn-icon fa fa-ellipsis-h" %></li>
+          <li><%= link_to "Help",help_path, class: "gn-icon fa fa-question" %></li>
+          <li><%= link_to "Contact",contact_path, class: "gn-icon fa fa-comment" %></li>
+        </ul>
+      </div><!-- /gn-scroller -->
+    </nav>
+  </li>
+
+</ul>
+<div class="navbar">
     <ul class="nav navbar-nav navbar-right pull-right fixed">
       <li class="visible-phone-landscape">
         <a href="#" id="search-toggle">

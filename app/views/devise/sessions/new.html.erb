@@ -6,7 +6,6 @@
     </header>
     <div class="body">
 <%= form_for(resource, as: resource_name, html:{class: "no-margin"} , url: session_path(resource_name)) do |f|%>
-          <fieldset>
           <div class="form-group no-margin">
             <%= f.label :email %>
             <div class="input-group input-group-lg">
@@ -25,7 +24,6 @@
                 <%= f.password_field :password, class:"form-control input-lg", placeholder: "Password" %>
               </div>
             </div>
-          </fieldset>
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
@@ -39,7 +37,7 @@
       </div>
       <footer>
         <div class="facebook-login">
-          <a href="index.html"><span><i class="fa fa-facebook-square fa-lg"></i> LogIn with Facebook</span></a>
+          <a href="/auth/facebook"><span><i class="fa fa-facebook-square fa-lg"></i> LogIn with Facebook</span></a>
         </div>
       </footer>
       </section>

@@ -6,6 +6,11 @@ img {
 .navbar-brand {
   font-size: inherit;
 }
+.navbar{
+  top:10px;
+  float:left;
+  z-index:999;
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -168,3 +173,8 @@ li.inactive a{
     color: #fff;
     text-decoration: none;
   }
+.logo {
+  position:absolute;
+  left: 50%;
+  margin: 0 auto;
+}

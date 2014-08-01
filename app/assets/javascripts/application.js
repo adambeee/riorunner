@@ -15,7 +15,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require turbolinks_transitions
 //= require bootstrap-tokenfield
 //= require app
 //= require jquery.pjax
@@ -25,3 +24,6 @@
 //= require select2
 //= require underscore-min
 //= require settings
+//= require modernizr.custom
+//= require classie
+//= require gnmenu

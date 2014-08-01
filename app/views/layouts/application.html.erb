@@ -8,30 +8,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="background-dark">
-<div class = "logo">
-  <!--logo start-->
-  <% if user_signed_in? %>
-      <%= link_to myriorunner_path(current_user.id), class: "brand" do %>
-          <%= image_tag("rr_logo.png") %>
-      <% end %>
-  <% else %>
-      <%= link_to root_url, class: "brand" do %>
-          <%= image_tag("rr_logo.png") %>
-      <% end %>
-  <% end %>
-</div>
-
+<div id="flash_messages"><%= flash_messages(:close, :fade) %></div>
     <%= render 'layouts/sidenav' %>
     <div class = "wrap">
       <header class="page-header">
         <%= render 'layouts/navigation' %>
       </header>
-    <div class="content container" id = "content">
-
-      <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
-      <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
-      <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
-        <%= yield %>
+    <div class="content container">
+      <%= yield %>
     </div>
       <div class="loader-wrap hiding hide">
         <i class="fa fa-spinner fa-spin"></i>
@@ -40,4 +24,6 @@
 </body>
 
 </html>
-
+<script>
+    new gnMenu( document.getElementById( 'gn-menu' ) );
+</script>

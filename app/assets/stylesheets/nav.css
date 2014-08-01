@@ -1,0 +1,231 @@
+
+
+.gn-menu-main,
+.gn-menu-main ul {
+		margin: 0;
+		padding: 0;
+		color: rgba(51,51,51,.5);
+		list-style: none;
+		text-transform: none;
+		font-family: 'helvetica neue', Helvetica, sans-serif;
+        font-weight: 200;
+		line-height: 60px;
+        z-index:999;
+}
+
+.gn-menu-main {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 60px;
+		font-size: 13px;
+}
+
+.gn-menu-main a {
+		display: block;
+		height: 100%;
+		color: rgba(51,51,51,.5);
+		text-decoration: none;
+		cursor: pointer;
+    font-family: 'helvetica neue', Helvetica, sans-serif;
+    font-weight: 200;
+}
+
+.no-touch .gn-menu-main a:hover,
+.no-touch .gn-menu li.gn-search-item:hover,
+.no-touch .gn-menu li.gn-search-item:hover a {
+		background: #5f6f81;
+		color: #fff;
+}
+
+
+/* icon-only trigger (menu item) */
+
+.gn-menu-main li.gn-trigger {
+		position: fixed;
+		width: 60px;
+        float:left;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+        color:white;
+}
+
+.gn-menu-main > li > a {
+		padding: 0 30px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+        font-family: 'helvetica neue', Helvetica, sans-serif;
+        font-weight: 200;
+}
+
+.gn-menu-main:after {
+		display: table;
+		clear: both;
+		content: "";
+}
+
+.gn-menu-wrapper {
+		position: fixed;
+		top: 60px;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		width: 60px;
+		opacity: 1;
+		-webkit-transform: translateX(-60px);
+		-moz-transform: translateX(-60px);
+		transform: translateX(-60px);
+		-webkit-transition: -webkit-transform 0.3s, width 0.3s;
+		-moz-transition: -moz-transform 0.3s, width 0.3s;
+		transition: transform 0.3s, width 0.3s;
+}
+
+.gn-scroller {
+		position: absolute;
+		overflow-y: scroll;
+		width: 370px;
+		height: 100%;
+}
+
+.gn-menu {
+		text-align: left;
+		font-size: 18px;
+}
+
+.gn-menu li:not(:first-child),
+.gn-menu li li {
+
+}
+
+.gn-submenu li {
+		overflow: hidden;
+		height: 0;
+		-webkit-transition: height 0.3s;
+		-moz-transition: height 0.3s;
+		transition: height 0.3s;
+        margin-left: 20px;
+}
+
+.gn-submenu li a {
+
+}
+
+
+.gn-icon::before {
+        color:rgba(51,51,51,.5);
+		display: inline-block;
+		width: 60px;
+		text-align: center;
+		text-transform: none;
+		font-weight: normal;
+		font-style: normal;
+		font-variant: normal;
+		font-family: 'fontawesome';
+		line-height: 60px;
+		speak: none;
+		-webkit-font-smoothing: antialiased;
+
+}
+
+.gn-icon-help::before {
+		content: "\f023"
+}
+
+.gn-icon-earth::before {
+    content: "\f023"
+}
+
+.gn-icon-cog::before {
+    content: "\f023"
+}
+
+.gn-icon-search::before {
+    content: "\f023"
+}
+
+.gn-icon-download::before {
+    content: "\f023"
+}
+
+.gn-icon-photoshop::before {
+    content: "\f023"
+}
+
+.gn-icon-illustrator::before {
+    content: "\f023"
+}
+
+.gn-icon-archive::before {
+    content: "\f023"
+}
+
+.gn-icon-article::before {
+    content: "\f023"
+}
+
+.gn-icon-pictures::before {
+    content: "\f023"
+}
+
+.gn-icon-videos::before {
+    content: "\f023"
+}
+
+/* if an icon anchor has a span, hide the span */
+
+.gn-icon span {
+		width: 0;
+		height: 0;
+		display: block;
+		overflow: hidden;
+}
+
+.gn-icon-menu::before {
+		margin-left: -15px;
+		vertical-align: -2px;
+		width: 30px;
+		height: 30px;
+		content: '\f0c9';
+        font-size: 2em;
+        color: rgba(51,51,51,.5);
+
+}
+.gn-icon-menu:hover{
+    color:white;
+}
+
+
+/* styles for opening menu */
+
+.gn-menu-wrapper.gn-open-all,
+.gn-menu-wrapper.gn-open-part {
+		-webkit-transform: translateX(0px);
+		-moz-transform: translateX(0px);
+		transform: translateX(0px);
+}
+
+.gn-menu-wrapper.gn-open-all {
+		width: 340px
+}
+
+.gn-menu-wrapper.gn-open-all .gn-submenu li {
+		height: 60px
+}
+
+@media screen and (max-width: 422px) { 
+	.gn-menu-wrapper.gn-open-all {
+			-webkit-transform: translateX(0px);
+			-moz-transform: translateX(0px);
+			transform: translateX(0px);
+			width: 100%;
+	}
+
+	.gn-menu-wrapper.gn-open-all .gn-scroller {
+			width: 130%
+	}
+}
